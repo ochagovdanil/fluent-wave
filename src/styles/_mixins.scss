@@ -1,0 +1,39 @@
+@mixin borderRadius($value: 0.8rem) {
+	border-radius: $value;
+	-webkit-border-radius: $value;
+	-moz-border-radius: $value;
+	-ms-border-radius: $value;
+	-o-border-radius: $value;
+}
+
+@mixin transition($prop1: all, $prop2: 0.3s, $prop3: ease) {
+	transition: $prop1 $prop2 $prop3;
+	-webkit-transition: $prop1 $prop2 $prop3;
+	-moz-transition: $prop1 $prop2 $prop3;
+	-ms-transition: $prop1 $prop2 $prop3;
+	-o-transition: $prop1 $prop2 $prop3;
+}
+
+@mixin scale($prop: 1.05) {
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+}
+
+@mixin translate($prop1: -50%, $prop2: 0) {
+	transform: translate($prop1, $prop2);
+	-webkit-transform: translate($prop1, $prop2);
+	-moz-transform: translate($prop1, $prop2);
+	-ms-transform: translate($prop1, $prop2);
+	-o-transform: translate($prop1, $prop2);
+}
+
+@mixin translateYAndRotate($prop1, $prop2) {
+	transform: translateY($prop1) rotate($prop2);
+	-webkit-transform: translateY($prop1) rotate($prop2);
+	-moz-transform: translateY($prop1) rotate($prop2);
+	-ms-transform: translateY($prop1) rotate($prop2);
+	-o-transform: translateY($prop1) rotate($prop2);
+}
