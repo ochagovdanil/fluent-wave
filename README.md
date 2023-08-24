@@ -47,7 +47,7 @@
 <ul>
 	<li>React JS</li>
 	<li>React Router</li>
-	<li>Bear React Carousel</li>
+	<li>Swiper JS</li>
 	<li>Font Awesome Icons</li>
 	<li>Email JS</li>
 	<li>AOS library</li>

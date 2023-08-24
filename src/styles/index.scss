@@ -985,6 +985,23 @@ body {
 }
 
 // --------------------------REVIEWS SLIDER COMPONENT------------------------------
+.swiper-wrapper {
+	padding-bottom: 1rem;
+}
+
+.swiper-pagination {
+	bottom: 0rem !important;
+}
+
+.swiper-pagination-bullet {
+	height: 0.6rem !important;
+	width: 0.6rem !important;
+}
+
+.swiper-pagination-bullet-active {
+	background: colors.$darkOrange !important;
+}
+
 .reviews {
 	&__slider {
 		padding: 0 0 4rem;
@@ -1000,6 +1017,10 @@ body {
 		box-shadow: 0 0.5rem 0.9rem 0.2rem colors.$deepBlue;
 
 		@include mixins.borderRadius();
+
+		&-container {
+			margin: 0 1rem;
+		}
 	}
 
 	&__triangle {

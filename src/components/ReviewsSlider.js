@@ -1,18 +1,34 @@
-import 'bear-react-carousel/dist/index.css';
-import BearCarousel from 'bear-react-carousel';
 import reviewsArray from '../data/ReviewsData';
 import ReviewsCard from './ReviewsCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 function ReviewsSlider() {
-	// prepare the reviews array for the reviews slider
-	const sliderData = reviewsArray.map(item => {
-		return {
-			key: item.id,
-			children: <ReviewsCard review={item.review} name={item.name} />,
-		};
-	});
+	// custom pagination for Swiper JS
+	const pagination = {
+		clickable: true,
+		renderBullet: function (_, className) {
+			return '<span class="' + className + '"></span>';
+		},
+	};
 
-	return <BearCarousel isEnableLoop isEnableNavButton data={sliderData} />;
+	return (
+		<Swiper modules={[Pagination]} pagination={pagination} autoHeight>
+			{reviewsArray.map(item => {
+				return (
+					<SwiperSlide>
+						<ReviewsCard
+							key={item.id}
+							review={item.review}
+							name={item.name}
+						/>
+					</SwiperSlide>
+				);
+			})}
+		</Swiper>
+	);
 }
 
 export default ReviewsSlider;
