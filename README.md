@@ -47,6 +47,7 @@
 <ul>
 	<li>React JS</li>
 	<li>React Router</li>
+	<li>CSS Modules (SCSS)</li>
 	<li>Swiper JS</li>
 	<li>Font Awesome Icons</li>
 	<li>Email JS</li>

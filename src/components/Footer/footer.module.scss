@@ -1,0 +1,76 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+
+.seaweed {
+	height: 5rem;
+}
+
+.footer {
+	background-color: colors.$deepBlue;
+}
+
+.content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 0 6.5rem;
+}
+
+.logo {
+	margin-top: 2rem;
+	height: 1.7rem;
+}
+
+.link {
+	display: inline-block;
+	text-decoration: none;
+	color: colors.$white;
+	font-size: 0.9rem;
+	background-color: colors.$darkBlue;
+	padding: 0.7rem 1.2rem;
+	margin-top: 1rem;
+
+	@include mixins.borderRadius();
+	@include mixins.transition();
+
+	&:hover {
+		background-color: colors.$darkOrange;
+		color: colors.$mainText;
+	}
+}
+
+.comments-icon {
+	margin-left: 0.5rem;
+}
+
+.submarine {
+	height: 4.5rem;
+	position: absolute;
+	bottom: 0;
+	left: 15vw;
+}
+
+.div {
+	position: relative;
+}
+
+@media all and (max-width: 62.5em) {
+	.submarine {
+		display: none;
+	}
+
+	.content {
+		padding: 2rem 0 3.5rem;
+	}
+}
+
+@media all and (max-width: 37.5em) {
+	.content {
+		justify-content: center;
+		padding: 2rem 0;
+	}
+
+	.logo {
+		display: none;
+	}
+}

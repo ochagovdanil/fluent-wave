@@ -1,0 +1,50 @@
+@use '../../styles/colors';
+
+.h2 {
+	color: colors.$white;
+
+	&::before {
+		background-color: colors.$lightSand;
+	}
+}
+
+.reviews {
+	background-color: colors.$darkBlue;
+}
+.div {
+	position: relative;
+}
+
+.fish {
+	position: absolute;
+	height: 2.5rem;
+
+	&--three {
+		top: 5rem;
+		left: 8rem;
+	}
+
+	&--four {
+		bottom: 1rem;
+		right: 5rem;
+	}
+}
+
+.slider {
+	padding: 0 0 4rem;
+}
+
+@media all and (max-width: 62.5em) {
+	.fish {
+		&--three,
+		&--four {
+			display: none;
+		}
+	}
+}
+
+@media all and (max-width: 50em) {
+	.slider {
+		padding: 0 0 2rem;
+	}
+}

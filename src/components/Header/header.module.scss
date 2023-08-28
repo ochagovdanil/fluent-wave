@@ -1,0 +1,114 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+
+#main {
+	margin: 8rem 0;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: flex-start;
+	gap: 5rem;
+}
+
+.title {
+	margin-top: 4rem;
+	font-size: clamp(
+		1.8rem,
+		1.2222222222222223rem + 2.3111111111111113vw,
+		3.1rem
+	);
+	line-height: 1.3;
+	color: colors.$mainText;
+}
+
+mark {
+	background-color: colors.$lightBlue;
+	color: colors.$mainText;
+}
+
+.description {
+	margin-top: 1.5rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: colors.$subText;
+}
+
+.link {
+	display: inline-block;
+	margin-top: 1.5rem;
+	color: colors.$white;
+	font-size: 1rem;
+	font-weight: 600;
+	background-color: colors.$black;
+	padding: 1rem 1.5rem;
+	text-decoration: none;
+
+	@include mixins.borderRadius();
+	@include mixins.transition();
+
+	&:hover {
+		background-color: colors.$darkBlue;
+	}
+}
+
+.image {
+	width: 37.5rem;
+	max-width: 100%;
+	display: block;
+}
+
+.bolt-icon {
+	margin-left: 0.5rem;
+}
+
+@media all and (max-width: 75em) {
+	#main {
+		margin: 6rem 0;
+		gap: 2rem;
+	}
+}
+
+@media all and (max-width: 62.5em) {
+	#main {
+		display: block;
+		max-width: 80vw;
+		margin: 8rem 0;
+	}
+
+	.image {
+		display: none;
+	}
+
+	.title {
+		line-height: 1.1;
+	}
+
+	.description {
+		line-height: 1.3;
+	}
+}
+
+@media all and (max-width: 56.25em) {
+	mark {
+		background-color: transparent;
+	}
+}
+
+@media all and (max-width: 46.875em) {
+	#main {
+		max-width: 100vw;
+		text-align: center;
+		margin: 6rem 0;
+	}
+
+	.link {
+		font-weight: 500;
+		font-size: 0.9rem;
+		padding: 0.8rem 1.1rem;
+	}
+}
+
+@media all and (max-width: 28.125em) {
+	.description {
+		font-size: 0.9rem;
+	}
+}

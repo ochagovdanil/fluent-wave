@@ -1,0 +1,26 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+
+.button {
+	z-index: 998;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	outline: none;
+	border: none;
+	background-color: colors.$orange;
+	padding: 0.9rem 1rem;
+	box-shadow: 0 0 0.5rem 0.0625rem colors.$lightGray;
+	cursor: pointer;
+
+	@include mixins.borderRadius(100%);
+	@include mixins.transition();
+
+	&:hover {
+		background-color: colors.$darkOrange;
+	}
+}
+
+.icon {
+	font-size: 1rem;
+}

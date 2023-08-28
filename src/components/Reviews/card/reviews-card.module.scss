@@ -1,0 +1,71 @@
+@use '../../../styles/colors';
+@use '../../../styles/mixins';
+
+.item {
+	position: relative;
+	margin: 0 auto 2rem;
+	padding: 1.5rem 2.5rem 2rem;
+	max-width: 45rem;
+	background-color: colors.$white;
+	text-align: center;
+	box-shadow: 0 0.5rem 0.9rem 0.2rem colors.$deepBlue;
+
+	@include mixins.borderRadius();
+}
+
+.container {
+	margin: 0 1rem;
+}
+
+.triangle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 3rem 3rem 0 0;
+	border-color: colors.$lightBlue transparent transparent transparent;
+}
+
+.review {
+	font-size: clamp(
+		1rem,
+		0.9555555555555555rem + 0.17777777777777795vw,
+		1.1rem
+	);
+	color: colors.$mainText;
+
+	&::before {
+		content: '\201C';
+		color: colors.$orange;
+		font-size: clamp(
+			2.5rem,
+			2.2777777777777777rem + 0.8888888888888888vw,
+			3rem
+		);
+		display: block;
+	}
+}
+
+.name {
+	font-size: clamp(
+		0.9rem,
+		0.8555555555555556rem + 0.17777777777777776vw,
+		1rem
+	);
+	color: colors.$subText;
+
+	&::before {
+		content: '...';
+		display: block;
+		color: colors.$subText;
+		margin-top: 0.5rem;
+	}
+}
+
+@media all and (max-width: 50em) {
+	.item {
+		padding: 1.2rem 2rem 1.5rem;
+	}
+}

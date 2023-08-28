@@ -1,0 +1,24 @@
+@use '../../../styles/colors';
+
+.swiper-wrapper {
+	padding-bottom: 1rem;
+}
+
+.swiper-pagination {
+	bottom: 0rem !important;
+}
+
+.swiper-pagination-bullet {
+	height: 0.6rem !important;
+	width: 0.6rem !important;
+}
+
+.swiper-pagination-bullet-active {
+	background: colors.$darkOrange !important;
+}
+
+@media all and (max-width: 56.25em) {
+	.bear-react-carousel__nav-group {
+		display: none;
+	}
+}

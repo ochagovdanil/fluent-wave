@@ -1,0 +1,69 @@
+@use '../../../styles/colors';
+@use '../../../styles/mixins';
+
+.dialog {
+	background-color: colors.$transparentBlack;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: 999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: auto;
+}
+
+.close-icon {
+	color: colors.$white;
+	font-size: 2rem;
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	cursor: pointer;
+
+	@include mixins.transition();
+
+	&:hover {
+		color: colors.$lightGray;
+	}
+}
+
+.image {
+	margin: auto;
+	display: block;
+	width: 30vw;
+
+	@include mixins.borderRadius();
+}
+
+@media all and (max-width: 68.75em) {
+	.image {
+		width: 35vw;
+	}
+}
+
+@media all and (max-width: 62.5em) {
+	.image {
+		width: 40vw;
+	}
+}
+
+@media all and (max-width: 50em) {
+	.image {
+		width: 50vw;
+	}
+}
+
+@media all and (max-width: 37.5em) {
+	.image {
+		width: 60vw;
+	}
+}
+
+@media all and (max-width: 25em) {
+	.image {
+		width: 70vw;
+	}
+}

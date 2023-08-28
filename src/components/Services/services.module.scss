@@ -1,0 +1,114 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+
+.services {
+	background-color: colors.$lightGreen;
+}
+
+.div {
+	position: relative;
+}
+
+.fish {
+	position: absolute;
+
+	&--one {
+		height: 2rem;
+		top: 10rem;
+		left: 15rem;
+	}
+
+	&--two {
+		height: 2rem;
+		top: 5rem;
+		right: 10rem;
+	}
+}
+
+.tabs {
+	width: min-content;
+	display: flex;
+	justify-content: center;
+	background-color: colors.$white;
+	padding: 0.15rem;
+	margin: 0 auto;
+
+	@include mixins.borderRadius();
+}
+
+.tab-item {
+	text-align: center;
+	width: 12rem;
+	border: none;
+	outline: none;
+	font-size: clamp(
+		0.9rem,
+		0.8555555555555556rem + 0.17777777777777776vw,
+		1rem
+	);
+	padding: 0.8rem 0;
+
+	@include mixins.borderRadius();
+
+	&--active {
+		color: colors.$white;
+		background-color: colors.$lightGray;
+		cursor: not-allowed;
+	}
+
+	&--disabled {
+		color: colors.$mainText;
+		background-color: colors.$white;
+		cursor: pointer;
+	}
+}
+
+.container {
+	gap: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 5rem 0 7rem 0;
+}
+
+@media all and (max-width: 62.5em) {
+	.fish {
+		&--one,
+		&--two {
+			display: none;
+		}
+	}
+}
+
+@media all and (max-width: 56.25em) {
+	.container {
+		gap: 2rem;
+	}
+}
+
+@media all and (max-width: 50em) {
+	.container {
+		padding-bottom: 4rem;
+	}
+}
+
+@media all and (max-width: 43.75em) {
+	.tab-item {
+		padding: 0.7rem 0;
+		width: 10rem;
+
+		&:last-child {
+			width: 8rem;
+		}
+	}
+}
+
+@media all and (max-width: 21.875em) {
+	.tab-item {
+		width: 8.5rem;
+
+		&:last-child {
+			width: 6rem;
+		}
+	}
+}

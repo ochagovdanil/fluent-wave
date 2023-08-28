@@ -1,0 +1,37 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+
+.why-us {
+	background-color: colors.$lightBlue;
+}
+
+.div {
+	position: relative;
+}
+
+.fish {
+	position: absolute;
+	top: 1rem;
+	right: 12rem;
+	height: 2rem;
+}
+
+.container {
+	gap: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-bottom: 7rem;
+}
+
+@media all and (max-width: 62.5em) {
+	.fish {
+		display: none;
+	}
+}
+
+@media all and (max-width: 50em) {
+	.container {
+		padding-bottom: 4rem;
+	}
+}

@@ -1,0 +1,88 @@
+@use '../../../styles/colors';
+@use '../../../styles/mixins';
+
+.ftitle {
+	color: colors.$mainText;
+	font-size: clamp(
+		0.9rem,
+		0.8111111111111111rem + 0.3555555555555557vw,
+		1.1rem
+	);
+	line-height: 1.4;
+
+	&::before {
+		content: '';
+		display: block;
+		height: 0.0625rem;
+		width: 7rem;
+		background-color: colors.$subText;
+		margin: 1rem auto 1.5rem;
+	}
+}
+
+.textarea {
+	resize: none;
+	display: block;
+	width: 100%;
+	max-width: 35rem;
+	height: 10rem;
+	border: 0.0625rem solid colors.$gray;
+	outline: none;
+	padding: 1rem;
+	color: colors.$mainText;
+	background-color: colors.$lightBlue;
+	margin: 1rem auto;
+	font-size: clamp(
+		0.9rem,
+		0.8555555555555556rem + 0.17777777777777776vw,
+		1rem
+	);
+
+	@include mixins.borderRadius();
+	@include mixins.transition();
+
+	&:hover,
+	&:focus {
+		border-color: colors.$black;
+	}
+}
+
+.button {
+	outline: none;
+	border: none;
+	color: colors.$white;
+	font-size: clamp(
+		0.9rem,
+		0.8555555555555556rem + 0.17777777777777776vw,
+		1rem
+	);
+	font-weight: 600;
+	background-color: colors.$black;
+	padding: 0.8rem 1.7rem;
+	cursor: pointer;
+
+	@include mixins.borderRadius();
+	@include mixins.transition();
+
+	&:hover {
+		background-color: colors.$darkOrange;
+		color: colors.$darkBlue;
+	}
+}
+
+.spin-icon {
+	font-size: clamp(
+		1.5rem,
+		1.2777777777777777rem + 0.8888888888888888vw,
+		2rem
+	);
+	color: colors.$subText;
+}
+
+@media all and (max-width: 50em) {
+	.button,
+	.spin-icon {
+		margin: 0 auto 4rem;
+		display: block;
+	}
+}

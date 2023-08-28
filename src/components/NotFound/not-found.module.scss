@@ -1,0 +1,84 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+@use '../../styles/fonts';
+
+.container {
+	height: 100vh;
+	width: 100vw;
+	background-color: colors.$deepBlue;
+	overflow: auto;
+}
+
+.whale-content {
+	text-align: center;
+	max-width: 35rem;
+	margin: 5rem auto;
+	padding: 0 1rem;
+}
+
+.image {
+	width: 100%;
+	max-width: 25rem;
+	display: block;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.error {
+	color: colors.$white;
+	font-size: clamp(
+		2rem,
+		1.4666666666666666rem + 2.1333333333333337vw,
+		3.2rem
+	);
+	font-family: fonts.$jet-brains-font;
+	margin-top: 2rem;
+}
+
+.main-text {
+	color: colors.$green;
+	font-size: clamp(
+		1rem,
+		0.8666666666666667rem + 0.5333333333333334vw,
+		1.3rem
+	);
+	font-family: fonts.$jet-brains-font;
+	margin-top: 1rem;
+}
+
+.sub-text {
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	color: colors.$white;
+	font-family: fonts.$jet-brains-font;
+	font-size: clamp(
+		0.9rem,
+		0.8555555555555556rem + 0.17777777777777776vw,
+		1rem
+	);
+	width: 100%;
+	text-align: center;
+	padding: 0 1rem;
+
+	@include mixins.translate();
+}
+
+.link {
+	color: colors.$green;
+	text-decoration: underline;
+}
+
+@media all and (max-height: 40.625em) {
+	.whale-content {
+		margin: 2rem auto;
+	}
+}
+
+@media all and (max-height: 34.375em) {
+	.sub-text {
+		position: relative;
+		top: 5rem;
+		padding-bottom: 1.5rem;
+	}
+}

@@ -1,0 +1,97 @@
+@use '../../../styles/mixins';
+@use '../../../styles/colors';
+
+.nav {
+	z-index: 999;
+	position: fixed;
+	top: -100vh;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: colors.$transparentBlack;
+
+	@include mixins.transition();
+}
+
+.menu {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 2rem;
+}
+
+.list {
+	list-style-type: none;
+}
+
+.link {
+	font-size: 1.1rem;
+	text-decoration: none;
+	color: colors.$white;
+	cursor: pointer;
+
+	@include mixins.transition();
+
+	&:hover {
+		color: colors.$gray;
+	}
+}
+
+.burger-menu {
+	display: none;
+	cursor: pointer;
+
+	&--active {
+		z-index: 99999;
+		position: fixed;
+		top: 1.5rem;
+		right: 1rem;
+	}
+
+	&--active .burger-bar:nth-child(2) {
+		opacity: 0;
+	}
+
+	&--active .burger-bar:nth-child(1) {
+		@include mixins.translateYAndRotate(0.5rem, 45deg);
+	}
+
+	&--active .burger-bar:nth-child(3) {
+		@include mixins.translateYAndRotate(-0.5rem, -45deg);
+	}
+
+	&--active .burger-bar {
+		background-color: colors.$white;
+	}
+}
+
+.burger-bar {
+	display: block;
+	height: 0.1875rem;
+	width: 1.5625rem;
+	background-color: colors.$subText;
+	margin: 0.3125rem 0.5rem;
+
+	@include mixins.borderRadius(0.625rem);
+	@include mixins.transition();
+}
+
+@media all and (max-width: 62.5em) {
+	.burger-menu {
+		display: block;
+	}
+}
+
+@media all and (max-width: 34.375em) {
+	.link {
+		font-size: 1rem;
+	}
+}
+
+@media all and (max-height: 18.75em) {
+	.menu {
+		row-gap: 1rem;
+	}
+}

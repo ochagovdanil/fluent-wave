@@ -1,0 +1,86 @@
+@use '../../../styles/colors';
+@use '../../../styles/mixins';
+
+.card {
+	text-align: center;
+	cursor: pointer;
+	@include mixins.transition();
+
+	&:hover {
+		@include mixins.scale();
+	}
+}
+
+.avatar {
+	height: 15rem;
+	margin-bottom: -7.5rem;
+	border: 0.1875rem solid colors.$lightBlue;
+	box-shadow: 0 0 0.7rem 0.0625rem colors.$darkBlue;
+
+	@include mixins.borderRadius(100%);
+}
+
+.info {
+	background-color: colors.$lightBlue;
+	width: 21rem;
+	box-shadow: 0 0.5rem 0.7rem 0.0625rem colors.$darkBlue;
+
+	@include mixins.borderRadius(0 0 0.8rem 0.8rem);
+}
+
+.fullname {
+	color: colors.$mainText;
+	font-size: clamp(
+		1rem,
+		0.8888888888888888rem + 0.4444444444444444vw,
+		1.25rem
+	);
+	font-weight: 600;
+	padding-top: 9rem;
+
+	&::after {
+		content: '';
+		display: block;
+		height: 0.125rem;
+		width: 2rem;
+		background-color: colors.$subText;
+		margin: 0.8rem auto 0;
+	}
+}
+
+.position {
+	color: colors.$subText;
+	font-size: clamp(
+		0.9rem,
+		0.8555555555555556rem + 0.17777777777777776vw,
+		1rem
+	);
+	padding: 1rem 0 2rem;
+}
+
+@media all and (max-width: 50em) {
+	.avatar {
+		height: 12rem;
+		margin-bottom: -6rem;
+	}
+
+	.info {
+		width: 19rem;
+	}
+
+	.fullname {
+		padding-top: 7rem;
+	}
+}
+
+@media all and (max-width: 28.125em) {
+	.info {
+		max-width: 18rem;
+	}
+}
+
+@media all and (max-width: 21.875em) {
+	.info {
+		width: 16rem;
+	}
+}

@@ -1,0 +1,60 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+
+.h2 {
+	color: colors.$white;
+
+	&::before {
+		background-color: colors.$lightSand;
+	}
+}
+
+.our-team {
+	background-color: colors.$lightGray;
+}
+
+.div {
+	position: relative;
+}
+
+.dolphin {
+	position: absolute;
+	height: 3.5rem;
+
+	&--one {
+		top: 5rem;
+		left: 10rem;
+	}
+
+	&--two {
+		top: 11rem;
+		right: 10rem;
+	}
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 5rem;
+	padding: 2rem 0 7rem 0;
+}
+
+@media all and (max-width: 62.5em) {
+	.dolphin {
+		&--one,
+		&--two {
+			display: none;
+		}
+	}
+
+	.container {
+		gap: 3rem;
+	}
+}
+
+@media all and (max-width: 50em) {
+	.container {
+		padding: 2rem 0 5rem 0;
+	}
+}

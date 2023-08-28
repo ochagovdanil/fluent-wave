@@ -1,0 +1,81 @@
+@use '../../styles/mixins';
+@use '../../styles/colors';
+
+.header {
+	margin-top: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo,
+.logo--mini {
+	height: 2rem;
+}
+
+.logo--mini {
+	display: none;
+}
+
+.menu {
+	display: flex;
+	gap: 1.5rem;
+	list-style: none;
+}
+
+.list:last-child .link {
+	font-weight: 600;
+	color: colors.$white;
+	background-color: colors.$black;
+	padding: 0.8rem 1.1rem;
+
+	@include mixins.borderRadius();
+
+	&:hover {
+		background-color: colors.$darkBlue;
+	}
+}
+
+.link {
+	font-size: 1rem;
+	text-decoration: none;
+	color: colors.$mainText;
+	cursor: pointer;
+
+	@include mixins.transition();
+
+	&:hover {
+		color: colors.$lightGray;
+	}
+}
+
+@media all and (max-width: 68.75em) {
+	.list:last-child .link {
+		font-size: 0.9rem;
+		font-weight: 500;
+		padding: 0.7rem 0.9rem;
+	}
+}
+
+@media all and (max-width: 62.5em) {
+	.nav {
+		display: none;
+	}
+}
+
+@media all and (max-width: 31.25em) {
+	.logo,
+	.logo--mini {
+		height: 1.7rem;
+	}
+}
+
+@media all and (max-width: 21.875em) {
+	.logo--mini {
+		display: block;
+	}
+
+	.logo {
+		display: none;
+	}
+}
