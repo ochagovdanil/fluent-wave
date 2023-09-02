@@ -1,5 +1,5 @@
 import whyUsArray from '@data/WhyUsData';
-import WhyUsCard from './card/WhyUsCard';
+import WhyUsCard from '@components/WhyUs/card/WhyUsCard';
 import fish from '@assets/fish-5.png';
 import useAos from '@hooks/useAos';
 import styles from './why-us.module.scss';

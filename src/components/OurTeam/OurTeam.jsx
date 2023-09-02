@@ -1,10 +1,10 @@
 import ourTeamArray from '@data/OurTeamData';
-import OurTeamCard from './card/OurTeamCard';
+import OurTeamCard from '@components/OurTeam/card/OurTeamCard';
 import dolphinOne from '@assets/dolphin-1.png';
 import dolphinTwo from '@assets/dolphin-2.png';
 import useAos from '@hooks/useAos';
 import { useState, useRef, useCallback } from 'react';
-import OurTeamAvatarDialog from './dialog/OurTeamAvatarDialog';
+import OurTeamAvatarDialog from '@components/OurTeam/dialog/OurTeamAvatarDialog';
 import styles from './our-team.module.scss';
 
 function OurTeam() {

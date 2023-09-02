@@ -6,7 +6,7 @@ import {
 	faSquarePhone,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ContactUsForm from './form/ContactUsForm';
+import ContactUsForm from '@components/ContactUs/form/ContactUsForm';
 import styles from './contact-us.module.scss';
 
 function ContactUs() {

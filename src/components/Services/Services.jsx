@@ -1,5 +1,5 @@
 import { servicesGroupList, servicesIndividualList } from '@data/ServicesData';
-import ServicesCard from './card/ServicesCard';
+import ServicesCard from '@components/Services/card/ServicesCard';
 import { useState } from 'react';
 import fishOne from '@assets/fish-1.png';
 import fishTwo from '@assets/fish-2.png';

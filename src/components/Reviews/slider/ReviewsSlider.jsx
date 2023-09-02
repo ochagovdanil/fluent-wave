@@ -1,5 +1,5 @@
 import reviewsArray from '@data/ReviewsData';
-import ReviewsCard from '../card/ReviewsCard';
+import ReviewsCard from '@components/Reviews/card/ReviewsCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
 import 'swiper/css';

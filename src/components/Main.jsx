@@ -1,16 +1,16 @@
-import TopButton from './TopButton/TopButton';
-import Navbar from './Nav/Navbar';
-import Header from './Header/Header';
+import TopButton from '@components/TopButton/TopButton';
+import Navbar from '@components/Nav/Navbar';
+import Header from '@components/Header/Header';
 import headerToWhyUsWave from '@assets/main-why-us.jpg';
 import whyUsToServices from '@assets/why-us-services.jpg';
 import servicesToOurTeam from '@assets/services-our-team.jpg';
 import outTeamToReviews from '@assets/our-team-reviews.jpg';
 import reviewsToFooter from '@assets/reviews-footer.jpg';
-import WhyUs from './WhyUs/WhyUs';
-import Services from './Services/Services';
-import OurTeam from './OurTeam/OurTeam';
-import Reviews from './Reviews/Reviews';
-import Footer from './Footer/Footer';
+import WhyUs from '@components/WhyUs/WhyUs';
+import Services from '@components/Services/Services';
+import OurTeam from '@components/OurTeam/OurTeam';
+import Reviews from '@components/Reviews/Reviews';
+import Footer from '@components/Footer/Footer';
 
 function Main() {
 	return (

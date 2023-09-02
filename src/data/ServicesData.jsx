@@ -1,10 +1,10 @@
-import boy from '../assets/boy.webp';
-import maiden from '../assets/maiden.webp';
-import man from '../assets/man.webp';
-import oldman from '../assets/oldman.webp';
-import girlAndBoy from '../assets/girl-and-boy.webp';
-import maidenAndMan from '../assets/maiden-and-man.webp';
-import oldmanAndMan from '../assets/oldman-and-man.webp';
+import boy from '@assets/boy.webp';
+import maiden from '@assets/maiden.webp';
+import man from '@assets/man.webp';
+import oldman from '@assets/oldman.webp';
+import girlAndBoy from '@assets/girl-and-boy.webp';
+import maidenAndMan from '@assets/maiden-and-man.webp';
+import oldmanAndMan from '@assets/oldman-and-man.webp';
 
 const servicesIndividualList = [
 	{

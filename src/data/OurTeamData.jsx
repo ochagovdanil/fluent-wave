@@ -1,7 +1,7 @@
-import danilkaRound from '../assets/danilka-round.webp';
-import danilkaFull from '../assets/danilka-full.webp';
-import lizkaRound from '../assets/lizka-round.webp';
-import lizkaFull from '../assets/lizka-full.webp';
+import danilkaRound from '@assets/danilka-round.webp';
+import danilkaFull from '@assets/danilka-full.webp';
+import lizkaRound from '@assets/lizka-round.webp';
+import lizkaFull from '@assets/lizka-full.webp';
 
 const ourTeamArray = [
 	{
