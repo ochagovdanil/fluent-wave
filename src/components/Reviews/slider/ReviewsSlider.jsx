@@ -1,4 +1,4 @@
-import reviewsArray from '../../../data/ReviewsData';
+import reviewsArray from '@data/ReviewsData';
 import ReviewsCard from '../card/ReviewsCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';

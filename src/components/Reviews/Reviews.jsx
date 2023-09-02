@@ -1,7 +1,7 @@
 import ReviewsSlider from './slider/ReviewsSlider';
-import fishThree from '../../assets/fish-3.png';
-import fishFour from '../../assets/fish-4.png';
-import useAos from '../../hooks/useAos';
+import fishThree from '@assets/fish-3.png';
+import fishFour from '@assets/fish-4.png';
+import useAos from '@hooks/useAos';
 import styles from './reviews.module.scss';
 
 function Reviews() {

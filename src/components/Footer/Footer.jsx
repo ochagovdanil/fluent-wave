@@ -1,6 +1,6 @@
-import logoWhite from '../../assets/logo-white.png';
-import submarine from '../../assets/submarine.png';
-import footerSeaweed from '../../assets/footer.jpg';
+import logoWhite from '@assets/logo-white.png';
+import submarine from '@assets/submarine.png';
+import footerSeaweed from '@assets/footer.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';

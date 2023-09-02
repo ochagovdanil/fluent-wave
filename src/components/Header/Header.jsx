@@ -1,4 +1,4 @@
-import lighthouse from '../../assets/lighthouse.png';
+import lighthouse from '@assets/lighthouse.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';

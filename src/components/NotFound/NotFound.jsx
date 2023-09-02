@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import whale from '../../assets/whale.png';
+import whale from '@assets/whale.png';
 import styles from './not-found.module.scss';
 
 function NotFound() {

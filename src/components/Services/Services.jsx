@@ -1,12 +1,9 @@
-import {
-	servicesGroupList,
-	servicesIndividualList,
-} from '../../data/ServicesData';
+import { servicesGroupList, servicesIndividualList } from '@data/ServicesData';
 import ServicesCard from './card/ServicesCard';
 import { useState } from 'react';
-import fishOne from '../../assets/fish-1.png';
-import fishTwo from '../../assets/fish-2.png';
-import useAos from '../../hooks/useAos';
+import fishOne from '@assets/fish-1.png';
+import fishTwo from '@assets/fish-2.png';
+import useAos from '@hooks/useAos';
 import styles from './services.module.scss';
 
 function Services() {

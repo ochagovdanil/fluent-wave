@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import logoBlack from '../../assets/logo-black.png';
-import logoBlackMini from '../../assets/logo-black-mini.png';
+import logoBlack from '@assets/logo-black.png';
+import logoBlackMini from '@assets/logo-black-mini.png';
 import NavbarMobile from './mobile/NavbarMobile';
 import styles from './navbar.module.scss';
 

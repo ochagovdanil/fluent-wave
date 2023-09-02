@@ -9,9 +9,9 @@ function ContactUsForm() {
 	const [isSending, setIsSending] = useState(false); // spinner loader indicator
 
 	// EmailJS keys
-	const PUBLIC_KEY = 'CX5FAHNrR9OzItwmm';
-	const SERVICE_ID = 'service_ik9p6wo';
-	const TEMPLATE_ID = 'template_o4ex72s';
+	const PUBLIC_KEY = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
+	const SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
+	const TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
 
 	// init EmailJS service with PUBLIC_KEY
 	useEffect(() => {

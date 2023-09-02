@@ -1,4 +1,4 @@
-import ship from '../../assets/ship.png';
+import ship from '@assets/ship.png';
 import {
 	faAt,
 	faPhone,
