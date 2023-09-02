@@ -19,12 +19,8 @@ function ReviewsSlider() {
 		<Swiper modules={[Pagination]} pagination={pagination} autoHeight>
 			{reviewsArray.map(item => {
 				return (
-					<SwiperSlide>
-						<ReviewsCard
-							key={item.id}
-							review={item.review}
-							name={item.name}
-						/>
+					<SwiperSlide key={item.id}>
+						<ReviewsCard review={item.review} name={item.name} />
 					</SwiperSlide>
 				);
 			})}
