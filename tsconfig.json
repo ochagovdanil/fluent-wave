@@ -23,12 +23,13 @@
 
 		/* Path Aliases */
 		"baseUrl": ".",
+		"types": ["node"],
 		"paths": {
-			"@assets": ["src/assets"],
-			"@styles": ["src/styles"],
-			"@data": ["src/data"],
-			"@hooks": ["src/hooks"],
-			"@components": ["src/components"]
+			"@assets/*": ["src/assets/*"],
+			"@styles/*": ["src/styles/*"],
+			"@data/*": ["src/data/*"],
+			"@hooks/*": ["src/hooks/*"],
+			"@components/*": ["src/components/*"]
 		}
 	},
 	"include": ["src"],
