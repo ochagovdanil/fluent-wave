@@ -1,6 +1,15 @@
 import { memo } from 'react';
 import styles from './our-team-card.module.scss';
 
+type PropsType = {
+	roundSrc: string;
+	fullSrc: string;
+	fullname: string;
+	position: string;
+	emoji: number;
+	openAvatar: (data: { fullSrc: string; alt: string }) => void;
+};
+
 const OurTeamCard = memo(function ({
 	roundSrc,
 	fullSrc,
@@ -8,7 +17,7 @@ const OurTeamCard = memo(function ({
 	position,
 	emoji,
 	openAvatar,
-}) {
+}: PropsType) {
 	return (
 		<div
 			className={styles.card}

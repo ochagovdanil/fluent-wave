@@ -6,19 +6,34 @@ import fishTwo from '@assets/fish-2.png';
 import useAos from '@hooks/useAos';
 import styles from './services.module.scss';
 
+type ServicesListType = {
+	id: number;
+	src: string;
+	title: string;
+	description: string | null;
+	price: number;
+}[];
+type ServiceItem = {
+	id: number;
+	src: string;
+	title: string;
+	description: string | null;
+	price: number;
+};
+
 function Services() {
-	const [isIndividualTab, setIsIndividualTab] = useState(true); // which tab to show
-	const servicesList = isIndividualTab
+	const [isIndividualTab, setIsIndividualTab] = useState<boolean>(true); // which tab to show
+	const servicesList: ServicesListType = isIndividualTab
 		? servicesIndividualList
 		: servicesGroupList; // which array to map through
 
 	useAos();
 
-	function handleIndividualTab() {
+	function handleIndividualTab(): void {
 		if (!isIndividualTab) setIsIndividualTab(!isIndividualTab);
 	}
 
-	function handleGroupTab() {
+	function handleGroupTab(): void {
 		if (isIndividualTab) setIsIndividualTab(!isIndividualTab);
 	}
 
@@ -59,7 +74,7 @@ function Services() {
 					</button>
 				</div>
 				<div className={styles.container} data-aos='fade-up'>
-					{servicesList.map(item => {
+					{servicesList.map((item: ServiceItem) => {
 						return (
 							<ServicesCard
 								key={item.id}

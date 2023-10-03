@@ -1,30 +1,29 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import styles from './form.module.scss';
 
 function ContactUsForm() {
-	const [message, setMessage] = useState('');
-	const [isSending, setIsSending] = useState(false); // spinner loader indicator
+	const [message, setMessage] = useState<string>('');
+	const [isSending, setIsSending] = useState<boolean>(false); // spinner loader indicator
 
 	// EmailJS keys
-	const PUBLIC_KEY = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
-	const SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
-	const TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
+	const PUBLIC_KEY: string = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
+	const SERVICE_ID: string = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
+	const TEMPLATE_ID: string = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
 
 	// init EmailJS service with PUBLIC_KEY
 	useEffect(() => {
 		emailjs.init(PUBLIC_KEY);
 	}, []);
 
-	function handleSubmit(e) {
+	function handleSubmit(e: FormEvent<HTMLFormElement>): void {
 		e.preventDefault();
 
 		// validate the form
-		if (!message) {
-			alert('Заполните поле перед отправкой формы!');
-		} else {
+		if (!message) alert('Заполните поле перед отправкой формы!');
+		else {
 			setIsSending(true);
 
 			// send the email
@@ -36,7 +35,7 @@ function ContactUsForm() {
 					alert('Ваша заявка была успешно отправлена!');
 					setMessage('');
 				})
-				.catch(error => {
+				.catch((error: Error) => {
 					alert('Что-то пошло не так :(');
 					console.log(error);
 				})

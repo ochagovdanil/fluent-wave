@@ -3,7 +3,16 @@ import danilkaFull from '@assets/danilka-full.webp';
 import lizkaRound from '@assets/lizka-round.webp';
 import lizkaFull from '@assets/lizka-full.webp';
 
-const ourTeamArray = [
+type OurTeamArrayType = {
+	id: number;
+	roundSrc: string;
+	fullSrc: string;
+	fullname: string;
+	position: string;
+	emoji: number;
+}[];
+
+const ourTeamArray: OurTeamArrayType = [
 	{
 		id: 1,
 		roundSrc: lizkaRound,

@@ -5,9 +5,17 @@ import {
 	faHandshake,
 	faUserGraduate,
 	faAward,
+	IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 
-const whyUsArray = [
+type WhyUsArrayType = {
+	id: number;
+	title: string;
+	description: string;
+	icon: IconDefinition;
+}[];
+
+const whyUsArray: WhyUsArrayType = [
 	{
 		id: 1,
 		title: '1 час',

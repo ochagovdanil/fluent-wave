@@ -3,15 +3,21 @@ import logoBlack from '@assets/logo-black.png';
 import logoBlackMini from '@assets/logo-black-mini.png';
 import NavbarMobile from '@components/Nav/mobile/NavbarMobile';
 import styles from './navbar.module.scss';
+import { MouseEvent } from 'react';
 
 function Navbar() {
 	// scroll to a specific section of the page
-	function handleScroll(e) {
+	function handleScroll(e: MouseEvent<HTMLParagraphElement>): void {
 		e.preventDefault();
 
-		document
-			.querySelector(e.target.getAttribute('data-scroll-to'))
-			.scrollIntoView(true);
+		const elementClass: string = (
+			e.target as HTMLParagraphElement
+		).getAttribute('data-scroll-to') as string;
+
+		const element = document.querySelector(
+			elementClass
+		) as HTMLParagraphElement;
+		element.scrollIntoView(true);
 	}
 
 	return (

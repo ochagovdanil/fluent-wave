@@ -1,17 +1,24 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './navbar-mobile.module.scss';
+import { MouseEvent } from 'react';
 
 function NavbarMobile() {
-	const [isMobileNavbarShown, setIsMobileNavbarShown] = useState(false);
+	const [isMobileNavbarShown, setIsMobileNavbarShown] =
+		useState<boolean>(false);
 
-	function handleScroll(e) {
+	function handleScroll(e: MouseEvent<HTMLParagraphElement>): void {
 		e.preventDefault();
 
 		// scroll to a specific section of the page
-		document
-			.querySelector(e.target.getAttribute('data-scroll-to'))
-			.scrollIntoView(true);
+		const elementClass: string = (
+			e.target as HTMLParagraphElement
+		).getAttribute('data-scroll-to') as string;
+
+		const element = document.querySelector(
+			elementClass
+		) as HTMLParagraphElement;
+		element.scrollIntoView(true);
 
 		// hide the mobile navbar
 		setIsMobileNavbarShown(false);

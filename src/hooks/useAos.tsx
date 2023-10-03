@@ -2,7 +2,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
-export default function useAos() {
+export default function useAos(): void {
 	return useEffect(() => {
 		Aos.init({
 			once: true,

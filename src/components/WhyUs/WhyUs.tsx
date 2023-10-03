@@ -3,6 +3,14 @@ import WhyUsCard from '@components/WhyUs/card/WhyUsCard';
 import fish from '@assets/fish-5.png';
 import useAos from '@hooks/useAos';
 import styles from './why-us.module.scss';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+
+type WhyUsItem = {
+	id: number;
+	title: string;
+	description: string;
+	icon: IconDefinition;
+};
 
 function WhyUs() {
 	useAos();
@@ -13,7 +21,7 @@ function WhyUs() {
 				<img src={fish} alt='' className={styles.fish} />
 				<h2 className='section-title'>Почему именно мы?</h2>
 				<div className={styles.container} data-aos='fade-up'>
-					{whyUsArray.map(item => {
+					{whyUsArray.map((item: WhyUsItem) => {
 						return (
 							<WhyUsCard
 								key={item.id}

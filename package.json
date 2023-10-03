@@ -17,7 +17,7 @@
 	},
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build",
+		"build": "tsc && vite build",
 		"preview": "vite preview"
 	},
 	"browserslist": {
@@ -34,8 +34,12 @@
 	},
 	"devDependencies": {
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+		"@types/node": "^20.8.2",
+		"@types/react": "^18.2.24",
+		"@types/react-dom": "^18.2.8",
 		"@vitejs/plugin-react": "^4.0.4",
 		"sass": "^1.65.1",
+		"typescript": "^5.2.2",
 		"vite": "^4.4.9"
 	}
 }

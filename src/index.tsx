@@ -9,7 +9,7 @@ const Main = lazy(() => import('@components/Main'));
 const NotFound = lazy(() => import('@components/NotFound/NotFound'));
 const ContactUs = lazy(() => import('@components/ContactUs/ContactUs'));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>

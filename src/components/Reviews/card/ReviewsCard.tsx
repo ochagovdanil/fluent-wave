@@ -1,7 +1,12 @@
 import { memo } from 'react';
 import styles from './reviews-card.module.scss';
 
-const ReviewsCard = memo(function ({ review, name }) {
+type PropsType = {
+	review: string;
+	name: string;
+};
+
+const ReviewsCard = memo(function ({ review, name }: PropsType) {
 	return (
 		<div className={styles.container}>
 			<div className={styles.item}>

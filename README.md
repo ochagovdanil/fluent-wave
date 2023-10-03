@@ -45,6 +45,7 @@
 </div>
 <p><strong>FluentWave</strong> - built via:</p>
 <ul>
+	<li>TypeScript</li>
 	<li>Vite</li>
 	<li>React JS</li>
 	<li>React Router</li>

@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import styles from './top-button.module.scss';
 
 function TopButton() {
-	const [isButtonVisible, setIsButtonVisible] = useState(false);
+	const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
 
 	// show/hide the Top Button
 	useEffect(() => {
-		function handleScroll() {
+		function handleScroll(): void {
 			if (window.scrollY >= 200) setIsButtonVisible(true);
 			else setIsButtonVisible(false);
 		}
@@ -19,7 +19,7 @@ function TopButton() {
 	}, []);
 
 	// scroll to the top of the page
-	function handleClick() {
+	function handleClick(): void {
 		window.scrollTo(0, 0);
 	}
 

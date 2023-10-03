@@ -1,7 +1,19 @@
 import { memo } from 'react';
 import styles from './services-card.module.scss';
 
-const ServicesCard = memo(function ({ title, description, price, src }) {
+type PropsType = {
+	title: string;
+	description: string | null;
+	price: number;
+	src: string;
+};
+
+const ServicesCard = memo(function ({
+	title,
+	description,
+	price,
+	src,
+}: PropsType) {
 	return (
 		<div className={styles.card}>
 			<div className={styles.triangle}></div>

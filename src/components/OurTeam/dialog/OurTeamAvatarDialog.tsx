@@ -3,7 +3,17 @@ import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { memo } from 'react';
 import styles from './dialog.module.scss';
 
-const OurTeamAvatarDialog = memo(function ({ fullSrc, alt, onClose }) {
+type PropsType = {
+	fullSrc: string;
+	alt: string;
+	onClose: () => void;
+};
+
+const OurTeamAvatarDialog = memo(function ({
+	fullSrc,
+	alt,
+	onClose,
+}: PropsType) {
 	return (
 		<div className={styles.dialog}>
 			<FontAwesomeIcon
