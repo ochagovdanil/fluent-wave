@@ -29,7 +29,8 @@
 			"@styles/*": ["src/styles/*"],
 			"@data/*": ["src/data/*"],
 			"@hooks/*": ["src/hooks/*"],
-			"@components/*": ["src/components/*"]
+			"@components/*": ["src/components/*"],
+			"@reducers/*": ["src/reducers/*"]
 		}
 	},
 	"include": ["src"],

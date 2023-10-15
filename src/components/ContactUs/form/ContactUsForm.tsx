@@ -1,12 +1,23 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useReducer, ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import styles from './form.module.scss';
+import {
+	messageProcessReducer,
+	StateType,
+} from '@reducers/MessageProcessReducer';
+
+const initialMessageProcess: StateType = {
+	message: '',
+	isSending: false,
+};
 
 function ContactUsForm() {
-	const [message, setMessage] = useState<string>('');
-	const [isSending, setIsSending] = useState<boolean>(false); // spinner loader indicator
+	const [messageProcess, dispatch] = useReducer(
+		messageProcessReducer,
+		initialMessageProcess
+	);
 
 	// EmailJS keys
 	const PUBLIC_KEY: string = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
@@ -22,9 +33,14 @@ function ContactUsForm() {
 		e.preventDefault();
 
 		// validate the form
+		const message: string = messageProcess.message;
+
 		if (!message) alert('Заполните поле перед отправкой формы!');
 		else {
-			setIsSending(true);
+			dispatch({
+				type: 'update_sending',
+				isSending: true,
+			});
 
 			// send the email
 			emailjs
@@ -33,16 +49,30 @@ function ContactUsForm() {
 				})
 				.then(() => {
 					alert('Ваша заявка была успешно отправлена!');
-					setMessage('');
+
+					dispatch({
+						type: 'update_message',
+						message: '',
+					});
 				})
 				.catch((error: Error) => {
 					alert('Что-то пошло не так :(');
 					console.log(error);
 				})
 				.finally(() => {
-					setIsSending(false);
+					dispatch({
+						type: 'update_sending',
+						isSending: false,
+					});
 				});
 		}
+	}
+
+	function setMessage(message: string): void {
+		dispatch({
+			type: 'update_message',
+			message,
+		});
 	}
 
 	return (
@@ -53,11 +83,13 @@ function ContactUsForm() {
 			</p>
 			<textarea
 				className={styles.textarea}
-				value={message}
-				onChange={e => setMessage(e.target.value)}
+				value={messageProcess.message}
+				onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+					setMessage(e.target.value)
+				}
 				placeholder='Оставьте ваши контакты и любые пожелания здесь...'
 			></textarea>
-			{isSending ? (
+			{messageProcess.isSending ? (
 				<FontAwesomeIcon
 					icon={faCircleNotch}
 					spin

@@ -10,6 +10,7 @@ export default defineConfig({
 			'@data': path.resolve(__dirname, './src/data/'),
 			'@hooks': path.resolve(__dirname, './src/hooks/'),
 			'@components': path.resolve(__dirname, './src/components/'),
+			'@reducers': path.resolve(__dirname, './src/reducers/'),
 		},
 	},
 	plugins: [react()],
