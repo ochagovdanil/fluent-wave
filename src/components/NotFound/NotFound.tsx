@@ -11,6 +11,7 @@ function NotFound() {
 					alt='Плачущий кит'
 					title='Плачущий кит'
 					className={styles.image}
+					loading='lazy'
 				/>
 				<p className={styles.error}>404</p>
 				<p className={styles['main-text']}>

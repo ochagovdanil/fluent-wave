@@ -44,11 +44,13 @@ function Services() {
 					src={fishOne}
 					alt=''
 					className={`${styles.fish} ${styles['fish--one']}`}
+					loading='lazy'
 				/>
 				<img
 					src={fishTwo}
 					alt=''
 					className={`${styles.fish} ${styles['fish--two']}`}
+					loading='lazy'
 				/>
 				<h2 className='section-title'>Наши тарифы</h2>
 				<div className={styles.tabs}>

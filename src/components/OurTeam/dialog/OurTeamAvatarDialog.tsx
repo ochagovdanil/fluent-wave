@@ -21,7 +21,12 @@ const OurTeamAvatarDialog = memo(function ({
 				className={styles['close-icon']}
 				onClick={onClose}
 			/>
-			<img src={fullSrc} alt={alt} className={styles.image} />
+			<img
+				src={fullSrc}
+				alt={alt}
+				className={styles.image}
+				loading='lazy'
+			/>
 		</div>
 	);
 });

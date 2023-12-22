@@ -28,12 +28,14 @@ function Navbar() {
 					alt='Логотип'
 					title='FluentWave'
 					className={styles.logo}
+					loading='lazy'
 				/>
 				<img
 					src={logoBlackMini}
 					alt='Логотип (маленький)'
 					title='FluentWave'
 					className={styles['logo--mini']}
+					loading='lazy'
 				/>
 				<nav className={styles.nav}>
 					<ul className={styles.menu}>

@@ -43,11 +43,13 @@ function OurTeam() {
 					src={dolphinOne}
 					alt=''
 					className={`${styles.dolphin} ${styles['dolphin--one']}`}
+					loading='lazy'
 				/>
 				<img
 					src={dolphinTwo}
 					alt=''
 					className={`${styles.dolphin} ${styles['dolphin--two']}`}
+					loading='lazy'
 				/>
 				<h2 className={`section-title ${styles['h2']}`}>
 					Наша команда

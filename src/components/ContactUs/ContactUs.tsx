@@ -22,6 +22,7 @@ function ContactUs() {
 						alt='Корабль'
 						title='Корабль'
 						className={styles.image}
+						loading='lazy'
 					/>
 				</div>
 				<div className={styles.content}>

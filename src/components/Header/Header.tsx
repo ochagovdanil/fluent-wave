@@ -26,7 +26,12 @@ function Header() {
 						/>
 					</Link>
 				</div>
-				<img src={lighthouse} alt='Маяк' className={styles.image} />
+				<img
+					src={lighthouse}
+					alt='Маяк'
+					className={styles.image}
+					loading='lazy'
+				/>
 			</main>
 		</div>
 	);

@@ -14,11 +14,13 @@ function Reviews() {
 					src={fishThree}
 					alt=''
 					className={`${styles.fish} ${styles['fish--three']}`}
+					loading='lazy'
 				/>
 				<img
 					src={fishFour}
 					alt=''
 					className={`${styles.fish} ${styles['fish--four']}`}
+					loading='lazy'
 				/>
 				<h2 className={`section-title ${styles.h2}`}>
 					Отзывы учеников

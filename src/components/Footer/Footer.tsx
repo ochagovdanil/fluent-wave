@@ -15,6 +15,7 @@ function Footer() {
 					alt=''
 					title='Приветик ;)'
 					className={styles.submarine}
+					loading='lazy'
 				/>
 				<div className={styles.content}>
 					<img
@@ -22,6 +23,7 @@ function Footer() {
 						alt='Логотип'
 						title='FluentWave'
 						className={styles.logo}
+						loading='lazy'
 					/>
 					<Link to='/contact-us' className={styles.link}>
 						Свяжитесь с нами

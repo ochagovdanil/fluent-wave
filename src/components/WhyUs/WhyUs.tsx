@@ -18,7 +18,7 @@ function WhyUs() {
 	return (
 		<section className={`${styles['why-us']} why-us-scroll`}>
 			<div className={`main-container ${styles.div}`}>
-				<img src={fish} alt='' className={styles.fish} />
+				<img src={fish} alt='' className={styles.fish} loading='lazy' />
 				<h2 className='section-title'>Почему именно мы?</h2>
 				<div className={styles.container} data-aos='fade-up'>
 					{whyUsArray.map((item: WhyUsItem) => {

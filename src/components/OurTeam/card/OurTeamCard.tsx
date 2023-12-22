@@ -23,7 +23,12 @@ const OurTeamCard = memo(function ({
 			className={styles.card}
 			onClick={() => openAvatar({ fullSrc, alt: fullname })}
 		>
-			<img src={roundSrc} alt={fullname} className={styles.avatar} />
+			<img
+				src={roundSrc}
+				alt={fullname}
+				className={styles.avatar}
+				loading='lazy'
+			/>
 			<div className={styles.info}>
 				<p className={styles.fullname}>{fullname}</p>
 				<p className={styles.position}>

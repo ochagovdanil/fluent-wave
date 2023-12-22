@@ -17,7 +17,7 @@ const ServicesCard = memo(function ({
 	return (
 		<div className={styles.card}>
 			<div className={styles.triangle}></div>
-			<img src={src} alt='' className={styles.image} />
+			<img src={src} alt='' className={styles.image} loading='lazy' />
 			<p className={styles.title}>{title}</p>
 			<p className={styles.description}>{description}</p>
 			<p className={styles.price}>
