@@ -1,7 +1,7 @@
 @use '@styles/colors';
 @use '@styles/mixins';
 
-.ftitle {
+.title {
 	color: colors.$mainText;
 	font-size: clamp(
 		0.9rem,
