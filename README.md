@@ -49,6 +49,7 @@
 	<li>Vite</li>
 	<li>React JS</li>
 	<li>React Router</li>
+	<li>React Hook Form</li>
 	<li>CSS Modules (SCSS)</li>
 	<li>Swiper JS</li>
 	<li>Font Awesome Icons</li>

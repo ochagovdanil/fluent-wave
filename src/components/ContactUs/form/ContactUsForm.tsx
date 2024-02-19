@@ -1,23 +1,23 @@
-import { FormEvent, useEffect, useReducer, ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import styles from './form.module.scss';
-import {
-	messageProcessReducer,
-	StateType,
-} from '@reducers/MessageProcessReducer';
 
-const initialMessageProcess: StateType = {
-	message: '',
-	isSending: false,
+type FormType = {
+	textareaMessage: string;
 };
 
 function ContactUsForm() {
-	const [messageProcess, dispatch] = useReducer(
-		messageProcessReducer,
-		initialMessageProcess
-	);
+	const [isSending, setIsSending] = useState<boolean>(false); // loading indicator of the form
+
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors },
+	} = useForm<FormType>();
 
 	// EmailJS keys
 	const PUBLIC_KEY: string = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
@@ -29,67 +29,47 @@ function ContactUsForm() {
 		emailjs.init(PUBLIC_KEY);
 	}, []);
 
-	function handleSubmit(e: FormEvent<HTMLFormElement>): void {
-		e.preventDefault();
+	function onSubmit(data: FormType): void {
+		const message: string = data.textareaMessage; // message from the form <textarea>
 
-		// validate the form
-		const message: string = messageProcess.message;
+		setIsSending(true);
 
-		if (!message) alert('Заполните поле перед отправкой формы!');
-		else {
-			dispatch({
-				type: 'update_sending',
-				isSending: true,
+		// send the email
+		emailjs
+			.send(SERVICE_ID, TEMPLATE_ID, {
+				message,
+			})
+			.then(() => {
+				alert('Ваша заявка была успешно отправлена!');
+
+				reset(); // clear the form
+			})
+			.catch((error: Error) => {
+				alert('Что-то пошло не так :(');
+				console.log(error);
+			})
+			.finally(() => {
+				setIsSending(false);
 			});
-
-			// send the email
-			emailjs
-				.send(SERVICE_ID, TEMPLATE_ID, {
-					message,
-				})
-				.then(() => {
-					alert('Ваша заявка была успешно отправлена!');
-
-					dispatch({
-						type: 'update_message',
-						message: '',
-					});
-				})
-				.catch((error: Error) => {
-					alert('Что-то пошло не так :(');
-					console.log(error);
-				})
-				.finally(() => {
-					dispatch({
-						type: 'update_sending',
-						isSending: false,
-					});
-				});
-		}
-	}
-
-	function setMessage(message: string): void {
-		dispatch({
-			type: 'update_message',
-			message,
-		});
 	}
 
 	return (
-		<form className={styles.form} onSubmit={handleSubmit}>
+		<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 			<p className={styles.title}>
 				Либо свяжитесь с нами через простую форму. Наша команда ответит
 				вам в кратчайшие сроки:
 			</p>
 			<textarea
 				className={styles.textarea}
-				value={messageProcess.message}
-				onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-					setMessage(e.target.value)
-				}
 				placeholder='Оставьте ваши контакты и любые пожелания здесь...'
+				{...register('textareaMessage', {
+					required: 'Заполните поле перед отправкой!',
+				})}
 			></textarea>
-			{messageProcess.isSending ? (
+			{errors.textareaMessage?.type === 'required' && (
+				<p className={styles.error}>{errors.textareaMessage.message}</p>
+			)}
+			{isSending ? (
 				<FontAwesomeIcon
 					icon={faCircleNotch}
 					spin

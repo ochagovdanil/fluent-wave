@@ -47,6 +47,16 @@
 	}
 }
 
+.error {
+	color: colors.$errorRed;
+	font-size: clamp(
+		0.9rem,
+		0.8555555555555556rem + 0.17777777777777776vw,
+		1rem
+	);
+	margin-bottom: 1rem;
+}
+
 .button {
 	outline: none;
 	border: none;
